@@ -1,6 +1,6 @@
-select d.name as department_name, count(e.id) as numer_of_employees
+select d.name as department_name, count(e.id) as numer_of_employees   //selecting and creating tables colums
 from department as d
-left join employee as e                       
-on d.id = e.dept_id                                   
-group by d.name                                      
-order by number_of_employees desc, department_name asc      
+left join employee as e                                               // left join to retrive all rows from 'd' even if they are empty                       
+on d.id = e.dept_id                                                   // get rows where department.id equals the department of employee.DEPT_ID
+group by d.name                                                       // choose how to calc the aggregate function ( count )                                      
+order by number_of_employees desc, department_name asc                // choose desired order
