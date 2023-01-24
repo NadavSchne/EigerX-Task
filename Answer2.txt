@@ -1,0 +1,6 @@
+select d.name as department_name, count(e.id) as numer_of_employees
+from department as department
+left join employee as e
+on d.id = e.dept_id
+group by d.name
+order by number_of_employees desc, department_name asc
